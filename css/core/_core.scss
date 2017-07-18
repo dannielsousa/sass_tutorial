@@ -1,0 +1,46 @@
+//para minificar
+//sass --style compressed css/base.scss:css/base.min.css
+
+.container {
+    border: $borda_padrao;
+    display: block;
+    margin: 0 auto;
+    width: $largura_pagina;
+    @include border-radius(10px);
+}
+
+.btn-azul {
+    @include btn;
+    @include border-radius(10px);
+    background: $azul;
+    color: white;
+
+    &:hover {
+        background: red;
+    }
+}
+
+.btn-menor {
+    @extend .btn-azul;
+    width: diferenca($largura_pagina, $largura_pagina/2);
+}
+
+%titulo {
+    font-size: 30px;
+}
+
+.sublinhado {
+    text-decoration: underline;
+    @extend %titulo;
+}
+
+.item {
+    margin-bottom: 50px;
+
+    h1 {
+        color: red;
+    };
+    p {
+        padding: 20px 0;
+    };
+}
